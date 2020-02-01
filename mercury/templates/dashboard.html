@@ -82,6 +82,30 @@
                             </table>
                         </div>
                     </div>
+                    <br>
+                    <div class="sim-panel">
+                        <h4>Wind Speed</h4>
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                            <table class="table table-bordered table-striped mb-0">
+                                <thead>
+                                <tr bgcolor="#e0efdf">
+                                    <th>ID</th>
+                                    <th>Time</th>
+                                    <th>Wind speed (knots)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in wind_speed_data %}
+                                    <tr>
+                                        <th>{{ item.id }}</th>
+                                        <td>{{ item.created_at }}</td>
+                                        <td>{{ item.wind_speed }}</td>
+                                    </tr>
+                                {%  endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 mb-6">
@@ -145,11 +169,7 @@
                         </div>
 
                     </div>
-                </div>
-            </div>
-            <br>
-            <div class="row" align="center">
-                <div class="col-lg-6 col-md-6 mb-6 col-centered">
+                    <br>
                     <div class="sim-panel">
                         <h4>Fuel Level</h4>
                         <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -173,8 +193,10 @@
                             </table>
                         </div>
                     </div>
-                    <br><br>
+                    <br>
+                </div>
             </div>
+            <br>
         </div>
     </body>
 </html>
