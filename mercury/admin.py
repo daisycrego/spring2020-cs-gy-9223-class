@@ -9,6 +9,7 @@ from .models import (
     WheelSpeedSensor,
     SuspensionSensor,
     FuelLevelSensor,
+    WindSpeedSensor,
     EventCodeAccess,
 )
 
@@ -17,4 +18,5 @@ admin.site.register(AccelerationSensor)
 admin.site.register(WheelSpeedSensor)
 admin.site.register(SuspensionSensor)
 admin.site.register(FuelLevelSensor)
+admin.site.register(WindSpeedSensor)
 admin.site.register(EventCodeAccess)
