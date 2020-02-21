@@ -28,7 +28,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "ee@v))dd&_+-29rp@nmpl0jnqccj@us-u!nrd1+n9n#*r2^rrf"
 DEBUG = False
 ALLOWED_HOSTS = [
-    "telemetry-app-with-wind-speed.herokuapp.com",
     "nyu-mercury.herokuapp.com",
     "nyu-mercury-prod.herokuapp.com",
     "127.0.0.1",
