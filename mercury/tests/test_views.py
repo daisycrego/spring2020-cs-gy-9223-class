@@ -9,7 +9,6 @@ from ..models import (
     WheelSpeedSensor,
     SuspensionSensor,
     FuelLevelSensor,
-    WindSpeedSensor
 )
 
 TESTCODE = "testcode"
@@ -289,27 +288,6 @@ class TestSimulatorPost(TestCase):
         self.assertEqual(fr, foo.wheel_speed_fr)
         self.assertEqual(bl, foo.wheel_speed_bl)
         self.assertEqual(br, foo.wheel_speed_br)
-
-    def test_SimulatorView_POST_wind(self):
-        windSpeed = 12
-        response = self.client.post(
-            reverse(self.simulator_url),
-            data={
-                "created_at_wind_speed": CREATED_AT, 
-                "wind_speed": windSpeed,
-            },
-        )
-
-        self.assertEqual(201, response.status_code)
-        self.assertTemplateUsed('simulator.html')
-
-        foo = WindSpeedSensor.objects.get(
-            created_at=CREATED_AT,
-            wind_speed=windSpeed
-        )
-
-        self.assertEqual(EXPECTED_CREATED_AT, foo.created_at)
-        self.assertEqual(windSpeed, foo.wind_speed)
 
     def test_SimulatorView_POST_suspension(self):
         bl = 1009

@@ -77,18 +77,6 @@ class FuelLevelSensor(models.Model):
         return FuelLevelSensor.__name__
 
 
-class WindSpeedSensor(models.Model):
-    """This model represents the WindSpeed sensors that we expect to
-    be potentially available in the future in the NYU Motorsports
-    Racing vehicle.
-    """
-    created_at = models.DateTimeField()
-    wind_speed = models.FloatField(default=0) # impose a maximum?
-
-    def __str__(self):
-        return WindSpeedSensor.__name__
-
-
 class EventCodeAccess(models.Model):
     """This model stores the information about events. When an event is
     ongoing, if a new event_code is added and the enabled property is
